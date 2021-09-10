@@ -1,0 +1,19 @@
+<div class="main">
+  <div class="title">
+    <h1 class="form-header-title">
+    Saunner
+    </h1>
+  </div>
+  <div class="contents row">
+    <% @posts.each do |post| %>
+      <div class="content_post" style="background-image: url(<%= post.image %>);">
+        <p><%= post.title %></p>
+        <%= image_tag post.image.variant(resize: '500x500'), class: 'post-image' %>
+        <span class="text">
+          <%= post.text %>
+        </span>
+        <%= post.prefecture.name %>
+      </div>
+    <% end %>
+  </div>
+</div>

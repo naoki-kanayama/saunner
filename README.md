@@ -26,6 +26,7 @@
 |------------------|------------|-------------------|
 | title            | string     | null: false       |
 | text             | text       | null: false       |
+| image            | text       | null:false        |
 | prefecture       | integer    | null: false       |
 | user             | references | foreign_key: true |
 | likes_count      | integer    |                   |

@@ -1,0 +1,27 @@
+<div class="title">
+  <h1 class="form-header-title">
+  Saunner
+  </h1>
+</div>
+<div class="contents-row">
+  <div class="container">
+    <%= form_with(model: @post, local: true) do |f| %>
+    <h3>あなたのサ活を共有しよう</h3>
+    <div class ="form-title">
+      <%= f.text_field :title,class:"post-title", placeholder: "title" %>
+    </div>
+    <div class ="form-image">
+      <%= f.file_field :image,class:"post-image", id:"item-image" %>
+      <p>クリックしてファイルをアップロード</p>
+    </div>
+    <div class = "form-text">
+      <%= f.text_area :text,class:"post-text", placeholder: "text", rows: "10" %>
+    </div>
+    <div class = "post-prefecture">
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"post-prefecture"}) %>
+    </div>
+      <%= f.submit "SEND", class:"post-white-btn" %>
+    <% end %>
+
+  </div>
+</div>
