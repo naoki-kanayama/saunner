@@ -1,0 +1,47 @@
+.show-name{
+  margin-top: 10px;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f5f5f5;
+}
+.show-name a{
+  text-decoration: none;
+  color: black;
+}
+.post-show{
+  display: flex;
+  margin-top: 30px;
+}
+.show{
+  width: 100%;
+  text-align: center;
+  margin-left: 30px;
+}
+.show-image{
+  margin-left: 30px;
+}
+.show-text-prefecture{
+  height: 300px;
+  border-bottom: 1px solid #f5f5f5;
+}
+.show-title{
+  font-size: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f5f5f5;
+}
+.show-title a{
+  margin-left: 30px;
+}
+.show-text{
+  text-align: left;
+}
+.show-prefecture{
+  text-align: left;
+}
+.show-user-link{
+  margin-top: 30px;
+}
+.show-user-link a{
+  text-decoration: none;
+  color: black;
+}

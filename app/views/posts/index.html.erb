@@ -1,19 +1,24 @@
+<%= render "shared/header" %>
 <div class="main">
-  <div class="title">
-    <h1 class="form-header-title">
-    Saunner
-    </h1>
+  <div class ="main-left">
   </div>
-  <div class="contents row">
-    <% @posts.each do |post| %>
-      <div class="content_post" style="background-image: url(<%= post.image %>);">
-        <p><%= post.title %></p>
-        <%= image_tag post.image.variant(resize: '500x500'), class: 'post-image' %>
-        <span class="text">
-          <%= post.text %>
-        </span>
-        <%= post.prefecture.name %>
+  <div class="main-center">
+    <div class="contents-row">
+      <div class="main-post">
+        <div class = "recent-post">
+          <h1>最近の投稿一覧</h1>
+        </div>
+        <% @posts.each do |post| %>
+          <%= link_to post_path(post.id), method: :get, class:"main-show" do %>
+            <div class="content-post" style="background-image: url(<%= post.image %>);">
+              <%= image_tag post.image.variant(resize: '300x300') , class: 'post-image' %>
+              <p><%= post.title %></p>
+            </div>
+          <% end %>
+        <% end %>
       </div>
-    <% end %>
+    </div>
+  </div>
+  <div class="main-right">
   </div>
 </div>

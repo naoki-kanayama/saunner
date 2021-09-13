@@ -3,7 +3,6 @@
 <div class="post-form">
   <div class="post-container">
     <%= form_with(model: @post, local: true) do |f| %>
-    <h3>あなたのサ活を共有しよう</h3>
     <div class ="post-title">
       <%= f.text_field :title,class:"post-title-form", placeholder: "title" %>
     </div>

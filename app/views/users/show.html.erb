@@ -1,0 +1,29 @@
+<%= render "shared/header" %>
+<div class="introduction" >
+  <div class = "user-introduction">
+    <div class="users-image">
+      <% if @user.image.url.present? %>
+        <li><%= image_tag (@user.image.url), :size => '200x200', class:"introduction-image" %></li>
+      <% else %>
+        <li><%= image_tag ("noimage.png"), :size => '200x200', class:"introduction-image" %></li>
+      <% end %>
+    </div>
+    <div class="introduction-text">
+      <p class="introduction-name">
+        <%= @user.nickname %>
+        <% if user_signed_in? && current_user.id == @user.id %>
+          <%= link_to (image_tag ("setting.png"), :size => '30x30'), edit_user_path(@user.id), method: :get %>
+        <% end %>
+      </p>
+      <p><%= @user.introduction %><p>
+    </div>
+  </div>
+  <p class="posts-show"><%= @nickname %>さんの投稿一覧</p>
+  <div class="user-posts">
+    <div class ="user-posts-image">
+      <% @posts.each do |post| %>
+        <%= link_to (image_tag post.image.variant(resize: '300x300')), post_path(post.id), class:"detail-image"  %>
+      <% end %>
+    </div>
+  </div>
+</div>

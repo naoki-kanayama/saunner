@@ -1,9 +1,7 @@
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
 
 <div class="form-wrap">
-  <h1 class="form-header-title">
-    Saunner
-  </h1>
+  <%= render "shared/second-header" %>
   <div class="form">
     <div class="form-inner">
       <div class="form-group">
@@ -11,6 +9,10 @@
           <h2 class ="sign-up">Signup</h2>
         </div>
         <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"nickname", maxlength:"40" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :"プロフィール画像" %><br/>
+        <%= f.file_field :image %>
       </div>
       <div class="form-group">
         <%= f.email_field :email, class:"input-default", id:"email", placeholder:"e-mail", autofocus: true %>
@@ -25,9 +27,13 @@
         <%= f.submit "Signup" ,class:"register-white-btn" %>
       </div>
       <div class='session-btn'>
-        <%= f.submit "既にユーザーの方はこちら" ,class:"session-white-btn" %>
+        <%= link_to user_session_path do %>
+          <%= f.submit "既にユーザーの方はこちら" ,class:"session-white-btn" %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
 <% end %>
+
+

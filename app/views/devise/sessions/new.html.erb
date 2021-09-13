@@ -1,9 +1,7 @@
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
 
 <div class="form-wrap">
-  <h1 class="form-header-title">
-    Saunner
-  </h1>
+  <%= render "shared/second-header" %>
   <div class="form">
     <div class="form-inner">
       <div class="form-group">
@@ -18,10 +16,12 @@
         <%= f.password_field :password, class:"input-default", id:"password", placeholder:"password" %>
       </div>
       <div class='session-btn'>
-        <%= f.submit "Signup" ,class:"register-white-btn" %>
+        <%= f.submit "Signin" ,class:"register-white-btn" %>
       </div>
       <div class='register-btn'>
-        <%= f.submit "既にユーザーの方はこちら" ,class:"session-white-btn" %>
+        <%= link_to new_user_registration_path do %>
+          <%= f.submit "登録はこちら" ,class:"session-white-btn" %>
+        <% end %>
       </div>
     </div>
   </div>

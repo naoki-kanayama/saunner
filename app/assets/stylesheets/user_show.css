@@ -1,0 +1,44 @@
+.introduction{
+  margin: 20px 20px;
+}
+.user-introduction{
+  display: flex;
+  width: 100%;
+}
+
+.introduction-image{
+  margin: 20px;
+  border-radius: 100px;
+  object-fit: cover;
+  border: 2px solid black;
+}
+.introduction-text{
+  width: 70%;
+  margin-left: 100px;
+}
+.introduction-name{
+  font-size: 40px;
+}
+.introduction p{
+  width: 100%;
+  word-break: break-all;
+}
+.user-posts{
+  width: 100%;
+  display: flex;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.user-posts-image{
+  width: 950px;
+}
+.detail-image{
+  margin-right: 50px;
+  margin-bottom: 40px;
+}
+.posts-show{
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #f5f5f5;
+}

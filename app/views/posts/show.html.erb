@@ -1,0 +1,22 @@
+<%= render "shared/header" %>
+
+<p class ="show-name"><%= link_to (@post.user.nickname + "さんの投稿"), user_path(@post.user.id) %></p>
+<div class = "post-show">
+  <div class="show-image">
+    <%= image_tag @post.image.variant(resize: '500x500') %>
+  </div>
+  <div class ="show">
+    <p class="show-title">
+    <%= @post.title %>
+    <% if user_signed_in? && current_user.id == @post.user.id %>
+      <%= link_to (image_tag ("setting.png"), :size => '30x30'), edit_post_path(@post.id), method: :get %>
+      <%= link_to (image_tag ("trash.png"), :size => '30x30'), post_path(@post.id), method: :delete %>
+    <% end %>
+    </p>
+    <div class = "show-text-prefecture">
+      <p class = "show-text"><%= @post.text %></p>
+      <p class="show-prefecture"><%= @post.prefecture.name %></p>
+    </div>
+    <p class="show-user-link"><%= link_to (@post.user.nickname + "さんのページを見る"), user_path(@post.user.id) %></p>
+  </div>
+</div>
