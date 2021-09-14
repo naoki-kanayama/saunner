@@ -7,8 +7,11 @@
       <%= f.text_field :title,class:"post-title-form", placeholder: "title" %>
     </div>
     <div class ="post-image">
-      <%= f.file_field :image,class:"post-image-form", id:"item-image" %>
+      <%= f.file_field :images, multiple: true, name: 'post[images][]', class:"post-image-form", id:"item-image" %>
       <p>クリックしてファイルをアップロード</p>
+    </div>
+    <div class="preview" id="image-list">
+      
     </div>
     <div class = "post-text">
       <%= f.text_area :text,class:"post-text-form", placeholder: "text", rows: "10" %>

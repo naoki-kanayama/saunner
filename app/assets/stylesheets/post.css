@@ -5,15 +5,18 @@
 }
 
 .post-container{
-  height: 600px;
   width: 700px;
   display: flex;
   justify-content: center;
   border: 1px solid black;
   text-align: center;
+  padding-bottom: 30px;
 }
 form{
   width: 100%;
+}
+.post-title{
+  margin-top: 20px;
 }
 h3{
   font-size: 30px;
@@ -38,5 +41,19 @@ h3{
 .post-white-btn{
   width: 70%;
   height: 40px;
+}
+.preview{
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.img-preview{
+  height: 100px;
+  width: 100px;
+}
+.image-element{
+  width: 100px;
+  margin-right: 10px;
 }
 

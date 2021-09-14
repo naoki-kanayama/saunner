@@ -6,12 +6,16 @@
     <div class="contents-row">
       <div class="main-post">
         <div class = "recent-post">
-          <h1>最近の投稿一覧</h1>
+          <h1>POST</h1>
         </div>
         <% @posts.each do |post| %>
           <%= link_to post_path(post.id), method: :get, class:"main-show" do %>
-            <div class="content-post" style="background-image: url(<%= post.image %>);">
-              <%= image_tag post.image.variant(resize: '300x300') , class: 'post-image' %>
+            <div class="content-post" style="background-image: url(<%= post.images %>);">
+              <div class ="show-images">
+                <% post.images.each do |image| %>
+                  <li><%= image_tag image.variant(resize: '300x300') , class: 'post-image' %></li>
+                <% end %>
+              </div>
               <p><%= post.title %></p>
             </div>
           <% end %>

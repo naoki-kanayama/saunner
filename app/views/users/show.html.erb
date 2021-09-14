@@ -22,7 +22,11 @@
   <div class="user-posts">
     <div class ="user-posts-image">
       <% @posts.each do |post| %>
-        <%= link_to (image_tag post.image.variant(resize: '300x300')), post_path(post.id), class:"detail-image"  %>
+        <div class="show-images">
+          <% post.images.each do |image| %>
+            <%= link_to (image_tag image.variant(resize: '300x300')), post_path(post.id), class:"detail-image"  %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>

@@ -20,6 +20,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
   end
 
   def edit
@@ -45,6 +47,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :image, :text, :prefecture_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :text, :prefecture_id, images: []).merge(user_id: current_user.id)
   end
 end
