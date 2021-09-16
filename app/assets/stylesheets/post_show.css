@@ -1,3 +1,4 @@
+
 .show-name{
   margin-top: 10px;
   text-align: center;
@@ -11,14 +12,18 @@
 .post-show{
   display: flex;
   margin-top: 30px;
+  width: 1440px;
+  height: 100%;
 }
 .show{
   width: 100%;
   text-align: center;
   margin-left: 30px;
 }
-.show-image{
+.show-images{
   margin-left: 30px;
+  width: 500px;
+  height: 500px;
 }
 .show-text-prefecture{
   height: 300px;
@@ -71,19 +76,28 @@
 }
 
 .comments{
-  text-align: center;
   margin-bottom: 30px;
   border-bottom: 1px solid #f5f5f5;
   padding-bottom: 30px;
-  margin-top: -20px;
+  margin-top: 20px;
 }
 .comments h4{
   border-bottom: 1px solid #f5f5f5;
+  text-align: center;
+}
+.comments p{
+  padding-left: 600px;
+  border-bottom: 1px solid #f5f5f5;
+  margin-top: 20px;
 }
 .comment-user-name a{
   text-decoration: none;
   color: black;
   font-weight: bold;
+  margin-right: 20px;
+}
+.comments #text{
+  word-break: normal;
 }
 
 .like_button{
@@ -106,9 +120,27 @@
 }
 .red-heart{
   color: red;
-
 }
 
 .white-heart{
   color: gray;
+}
+.draggable{
+  height: 500px;
+}
+.slick-slide{
+  height: 500px;
+}
+.slick-slide div{
+  height: 500px;
+}
+.slick-slide div img{
+  height: 100%;
+}
+.slick-list{
+  height: 500px;
+}
+.slick-slide img{
+  height: 300px;
+  width: 300px;
 }

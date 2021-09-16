@@ -1,8 +1,11 @@
 class Post < ApplicationRecord
+  FILE_NUMBER_LIMIT = 3
+
   validates :title, presence: true
   validates :text, presence: true
   validates :prefecture_id, numericality: { other_than: 1 , message: "can't be blank"} 
   validates :images, presence: true
+  validate :validate_number_of_files
 
   belongs_to :user
   has_many :comments
@@ -11,4 +14,9 @@ class Post < ApplicationRecord
   has_many_attached :images
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
+
+  def validate_number_of_files
+    return if images.length <= FILE_NUMBER_LIMIT
+    errors.add(:images, "に添付できる画像は#{FILE_NUMBER_LIMIT}件までです。")
+  end
 end

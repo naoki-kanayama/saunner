@@ -1,0 +1,28 @@
+.footer{
+  height: 450px;
+  background-color: skyblue;
+}
+.area{
+  display: flex;
+  justify-content:space-around;
+  padding-top: 80px;
+}
+.prefecture-head{
+  text-align: center;
+}
+.prefecture-head p{
+  font-size: 18px;
+  font-weight: bolder;
+  color: white;
+  width: 100%;
+}
+.prefecture-list{
+  text-align: center;
+}
+.prefecture-list li{
+  margin-top: 10px;
+}
+.prefecture-list li a{
+  color: white;
+  text-decoration: none;
+}

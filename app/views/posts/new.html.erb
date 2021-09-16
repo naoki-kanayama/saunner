@@ -9,7 +9,6 @@
     </div>
     <div class ="post-image">
       <%= f.file_field :images, multiple: true, name: 'post[images][]', class:"post-image-form", id:"item-image" %>
-      <p>クリックしてファイルをアップロード</p>
     </div>
     <div class="preview" id="image-list">
       
@@ -24,3 +23,5 @@
     <% end %>
   </div>
 </div>
+
+<%= render "shared/footer" %>

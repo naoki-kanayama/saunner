@@ -44,6 +44,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def prefecture
+    @post = Post.find_by(prefecture_id: params[:id])
+    @posts = Post.where(prefecture_id: params[:id]).order('created_at DESC')
+  end
+
 
   private
   def post_params

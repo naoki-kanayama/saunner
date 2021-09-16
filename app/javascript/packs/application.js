@@ -5,11 +5,21 @@
 
 //= require jquery
 //= require jquery_ujs
+require('jquery')
 require("@rails/ujs").start()
-//require("turbolinks").start()
 require("@rails/activestorage").start()
-require("channels")
-require('../preview')
+import "channels";
+import '../preview';
+import '../slick.min'
+import $ from 'jquery';
+import 'slick-carousel';
+
+$(function() {
+  $('.show-images').slick({
+      dots: true,
+      arrows: true
+  });
+});
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

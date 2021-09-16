@@ -9,16 +9,14 @@
           <h1>POST</h1>
         </div>
         <% @posts.each do |post| %>
-          <%= link_to post_path(post.id), method: :get, class:"main-show" do %>
-            <div class="content-post" style="background-image: url(<%= post.images %>);">
-              <div class ="show-images">
-                <% post.images.each do |image| %>
-                  <li><%= image_tag image.variant(resize: '300x300') , class: 'post-image' %></li>
-                <% end %>
-              </div>
+          <div class="content-post" style="background-image: url(<%= post.images %>);">
+            <div class ="main-show-image">
+              <%= link_to post_path(post.id), method: :get, class:"main-show" do %>
+                <li class="post-image"><%= image_tag post.images[0].variant(resize: '300x300')%></li>
+              <% end %>
               <p><%= post.title %></p>
             </div>
-          <% end %>
+          </div>
         <% end %>
       </div>
     </div>
@@ -26,3 +24,4 @@
   <div class="main-right">
   </div>
 </div>
+<%= render "shared/footer" %>
