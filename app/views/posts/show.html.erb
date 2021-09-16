@@ -20,6 +20,7 @@
     <div class = "show-text-prefecture">
       <p class = "show-text"><%= @post.text %></p>
       <p class="show-prefecture"><%= @post.prefecture.name %></p>
+      <p class ="show-time"><%= time_ago_in_words(@post.created_at) %></p>
     </div>
     <%= render "likes/like", post: @post %>
     <p class="show-user-link"><%= link_to (@post.user.nickname + "さんのページを見る"), user_path(@post.user.id) %></p>
@@ -31,13 +32,14 @@
   <p>
     <strong class="comment-user-name"><%= link_to comment.user.nickname, user_path(comment.user.id) %></strong>
     <%= comment.text %>
+    <%= time_ago_in_words(comment.created_at) %>
   </p>
   <% end %>
 </div>
 <div class ="post-comment">
   <div class="comment">
     <%= form_with(model: [@post, @comment], local: true) do |f| %>
-      <%= f.text_area :text, placeholder: "コメントする", rows: "4", class:"comment-form" %>
+      <%= f.text_area :text, placeholder: "コメントする（140文字以内）", rows: "4", class:"comment-form" %>
       <%= f.submit "SEND", class:"comment-send" %>
     <% end %>
   </div>

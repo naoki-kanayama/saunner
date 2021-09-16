@@ -1,18 +1,15 @@
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
 
 <div class="form-wrap">
-  <%= render "shared/second-header" %>
   <div class="form">
+    <%= video_tag("/videos/sauna.mov", autoplay: :true, loop: :true, muted: :true, class: 'video-content') %>
+    <div class="app-title">Saunner</div>
     <div class="form-inner">
       <div class="form-group">
         <div class ="form-signup">
           <h2 class ="sign-up">Signup</h2>
         </div>
         <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"nickname", maxlength:"40" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :"プロフィール画像" %><br/>
-        <%= f.file_field :image %>
       </div>
       <div class="form-group">
         <%= f.email_field :email, class:"input-default", id:"email", placeholder:"e-mail", autofocus: true %>
@@ -23,11 +20,15 @@
       <div class="form-group">
         <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"password(再入力)" %>
       </div>
+      <div class="form-group">
+        <%= f.label :"プロフィール画像", class:"form-name" %><br/>
+        <%= f.file_field :image %>
+      </div>
       <div class='register-btn'>
         <%= f.submit "Signup" ,class:"register-white-btn" %>
       </div>
       <div class='session-btn'>
-        <%= link_to user_session_path do %>
+        <%= link_to new_user_session_path, method: :get do %>
           <%= f.submit "既にユーザーの方はこちら" ,class:"session-white-btn" %>
         <% end %>
       </div>

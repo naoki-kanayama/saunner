@@ -1,0 +1,38 @@
+
+ja:
+  datetime:
+    distance_in_words:
+      half_a_minute: "30秒前後"
+      less_than_x_seconds:
+        one:   "1 sec"
+        other: "%{count}sec"
+      x_seconds:
+        one:   "1 sec"
+        other: "%{count}sec"
+      less_than_x_minutes:
+        one:   "1 min"
+        other: "%{count}min"
+      x_minutes:
+        one:   "1 min"
+        other: "%{count}分"
+      about_x_hours:
+        one:   "1hour"
+        other: "%{count}hour"
+      x_days:
+        one:   "1day"
+        other: "%{count}day"
+      about_x_months:
+        one:   "1month"
+        other: "%{count}month"
+      x_months:
+        one:   "1month"
+        other: "%{count}month"
+      almost_x_years:
+        one:   "１year"
+        other: "%{count}year"
+      about_x_years:
+        one:   "1year"
+        other: "%{count}year"
+      over_x_years:
+        one:   "1年year"
+        other: "%{count}year"

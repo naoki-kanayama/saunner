@@ -13,9 +13,38 @@
   padding-bottom: 30px;
   margin: 60px 0;
 }
+.post-container ::placeholder{
+  color: gray;
+}
 form{
   width: 100%;
 }
+.form-change-group label{
+  color: black;
+}
+.form-change-group{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+  color: white;
+}
+.form-change-group textarea{
+  border: 1px solid black;
+  color: black;
+}
+.register-change-white-btn{
+  border: 1px solid black;
+  color:black;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  background-color: white;
+}
+
 .post-title{
   margin-top: 20px;
 }

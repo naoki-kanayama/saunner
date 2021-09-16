@@ -1,8 +1,9 @@
 <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
 
 <div class="form-wrap">
-  <%= render "shared/second-header" %>
   <div class="form">
+    <%= video_tag("/videos/sauna.mov", autoplay: :true, loop: :true, muted: :true, class: 'video-content') %>
+    <div class="app-title">Saunner</div>
     <div class="form-inner">
       <div class="form-group">
         <div class ="form-signup">
@@ -19,7 +20,7 @@
         <%= f.submit "Signin" ,class:"register-white-btn" %>
       </div>
       <div class='register-btn'>
-        <%= link_to new_user_registration_path do %>
+        <%= link_to new_user_registration_path,method: :get do %>
           <%= f.submit "登録はこちら" ,class:"session-white-btn" %>
         <% end %>
       </div>
