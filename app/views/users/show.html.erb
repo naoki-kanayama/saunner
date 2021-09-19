@@ -13,6 +13,8 @@
         <%= @user.nickname %>
         <% if user_signed_in? && current_user.id == @user.id %>
           <%= link_to (image_tag ("setting.png"), :size => '30x30'), edit_user_path(@user.id), method: :get %>
+        <% else %>
+          <%= link_to (image_tag ("message.png"), :size => '70x70'), chat_path(@user.id) %> 
         <% end %>
       </p>
       <p><%= @user.introduction %><p>

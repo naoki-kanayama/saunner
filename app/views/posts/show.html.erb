@@ -30,7 +30,7 @@
   <h4>コメント一覧</h4>
   <% @comments.each do |comment| %>
   <p>
-    <strong class="comment-user-name"><%= link_to comment.user.nickname, user_path(comment.user.id) %></strong>
+    <strong class="comment-user-name"><%= link_to comment.user.nickname + "さん", user_path(comment.user.id) %></strong>
     <%= comment.text %>
     <%= time_ago_in_words(comment.created_at) %>
   </p>

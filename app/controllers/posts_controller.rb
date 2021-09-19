@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @posts = Post.order("created_at DESC").limit(5)
+    @posts = Post.order("created_at DESC")
+    @likeposts = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
   end
 
   def new
@@ -47,6 +48,15 @@ class PostsController < ApplicationController
   def prefecture
     @post = Post.find_by(prefecture_id: params[:id])
     @posts = Post.where(prefecture_id: params[:id]).order('created_at DESC')
+  end
+
+  def search
+    if params[:keyword].present?
+      @posts = Post.where('(title LIKE ?) OR (text LIKE ?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%")
+      @keyword = params[:keyword]
+    else
+      @posts = Post.all
+    end
   end
 
 

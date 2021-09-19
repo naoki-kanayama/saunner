@@ -19,4 +19,5 @@ class Post < ApplicationRecord
     return if images.length <= FILE_NUMBER_LIMIT
     errors.add(:images, "に添付できる画像は#{FILE_NUMBER_LIMIT}件までです。")
   end
+  
 end

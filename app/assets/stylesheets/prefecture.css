@@ -1,0 +1,37 @@
+.prefecture-show-title{
+  text-align: center;
+  margin: 20px 0 15px;
+  border-bottom: 1px solid #f5f5f5;
+  padding-bottom: 20px;
+}
+.no-content{
+  text-align: center;
+  height: 200px;
+  margin-top: 100px;
+}
+.prefecture-posts{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.prefecture-show-images{
+  display: flex;
+  flex-wrap: wrap;
+}
+.prefecture-show-image{
+  width: 300px;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+.prefecture-show-image a{
+  text-decoration: none;
+}
+.prefecture-show-image p{
+  text-align: center;
+  color: black;
+}
+.prefecture-detail-image{
+  margin-right: 50px;
+  margin-bottom: 40px;
+}

@@ -1,0 +1,26 @@
+
+.search-result h1{
+  text-align: center;
+  margin-top: 10px;
+  height: 40px;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 20px;
+}
+.search-post-show{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.search-post-detail{
+  text-align: center;
+}
+.search-post-detail p{
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+.search-post-detail a{
+  text-decoration: none;
+}

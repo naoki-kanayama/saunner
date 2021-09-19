@@ -2,19 +2,19 @@
 ja:
   datetime:
     distance_in_words:
-      half_a_minute: "30秒前後"
+      half_a_minute: "1min ago"
       less_than_x_seconds:
-        one:   "1 sec"
+        one:   "1sec"
         other: "%{count}sec"
       x_seconds:
-        one:   "1 sec"
+        one:   "1sec"
         other: "%{count}sec"
       less_than_x_minutes:
-        one:   "1 min"
+        one:   "1min"
         other: "%{count}min"
       x_minutes:
-        one:   "1 min"
-        other: "%{count}分"
+        one:   "1min"
+        other: "%{count}min"
       about_x_hours:
         one:   "1hour"
         other: "%{count}hour"
@@ -34,5 +34,5 @@ ja:
         one:   "1year"
         other: "%{count}year"
       over_x_years:
-        one:   "1年year"
+        one:   "1year"
         other: "%{count}year"

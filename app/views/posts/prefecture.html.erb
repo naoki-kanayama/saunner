@@ -1,8 +1,24 @@
 <%= render "shared/header" %>
-  <div>
-    <h1><%= @post.prefecture.name %>の投稿一覧</h1>
-  </div>
-  <% @post.images.each do |image| %>
-    <%= image_tag image.variant(resize: '500x500') %>
+  <% if @post.present? %>
+    <div class="prefecture-show-title">
+      <h1><%= @post.prefecture.name %>の投稿一覧</h1>
+    </div>
+    <div class="prefecture-posts">
+      <div class="prefecture-show-images">
+        <% @posts.each do |post| %>
+          <div class="prefecture-show-image">
+            <%= link_to post_path(post.id) do %>
+              <%= image_tag post.images[0].variant(resize: '300x300'), class:"prefecture-detail-image"  %>
+              <p><%= post.title %></p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <div class="no-content">
+      <h1>この都道府県での投稿はまだされていません！</h1>
+      <h1>初めての投稿をしてみましょう！</h1>
+    </div>
   <% end %>
 <%= render "shared/footer" %>

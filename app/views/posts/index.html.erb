@@ -1,7 +1,11 @@
 <%= render "shared/header" %>
+<div class="post-search">
+  <%= form_with url: search_posts_path, local: true, method: :get do |form| %>
+    <%= form.text_field :keyword, placeholder: "投稿を検索する", class:"search-form" %>
+    <%= form.submit "検索", class:"search-input" %>
+  <% end %>
+</div>
 <div class="main">
-  <div class ="main-left">
-  </div>
   <div class="main-center">
     <div class="contents-row">
       <div class="main-post">
@@ -14,7 +18,8 @@
               <%= link_to post_path(post.id), method: :get, class:"main-show" do %>
                 <li class="post-image"><%= image_tag post.images[0].variant(resize: '300x300')%></li>
               <% end %>
-              <p><%= post.title %></p>
+              <p class="main-post-title"><%= link_to post.title, post_path(post.id), method: :get, class:"main-post-title" %></p>
+              <p class="post-user-name"><%=  link_to  ("post by " + post.user.nickname), user_path(post.user.id) %></p>
             </div>
           </div>
         <% end %>
@@ -22,6 +27,18 @@
     </div>
   </div>
   <div class="main-right">
+    <div class="rank-title">
+      <h1>Post Ranking</h1>
+    </div>
+      <% @likeposts.each do |likepost|%>
+        <%= link_to post_path(likepost.id), method: :get, class:"rank-show" do %>
+          <%= image_tag likepost.images[0].variant(resize: '150x150')%>
+          <p><%= likepost.title%></p>
+          <div class="rank-iine">
+            <p>♡<%= likepost.likes_count %></p>
+          </div>
+        <% end %>
+      <% end %>
   </div>
 </div>
 <%= render "shared/footer" %>

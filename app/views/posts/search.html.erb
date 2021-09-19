@@ -1,0 +1,17 @@
+<%= render "shared/header" %>
+<div class ="search-result">
+  <h1>"<%= @keyword %>"の検索結果</h2>
+</div>
+<div class ="search-post-show">
+  <div class="search-posts">
+    <% @posts.each do |post| %>
+      <div class ="search-post-detail">
+        <%= link_to post_path(post.id) do %>
+          <%= image_tag post.images[0].variant(resize: '300x300') %>
+          <p><%= post.title %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render "shared/footer" %>
