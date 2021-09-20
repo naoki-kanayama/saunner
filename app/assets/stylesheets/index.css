@@ -95,6 +95,8 @@ li{
   width: 60%;
   display: flex;
   justify-content: center;
+  height: 840px;
+  overflow: auto;
 }
 .main-right{
   width: 38%;
