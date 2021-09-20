@@ -1,0 +1,11 @@
+<% @posts.each do |post| %>
+  <div class="content-post" style="background-image: url(<%= post.images %>);">
+    <div class ="main-show-image">
+      <%= link_to post_path(post.id), method: :get, class:"main-show" do %>
+        <li class="post-image"><%= image_tag post.images[0].variant(resize: '300x300')%></li>
+      <% end %>
+      <p class="main-post-title"><%= link_to post.title, post_path(post.id), method: :get, class:"main-post-title" %></p>
+      <p class="post-user-name"><%=  link_to  ("post by " + post.user.nickname), user_path(post.user.id) %></p>
+    </div>
+  </div>
+<% end %>

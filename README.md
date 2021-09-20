@@ -13,11 +13,15 @@
 | first_name_kana    | string | null: false               |
 | birthday           | date   | null: false               |
 | profile            | text   |                           |
+| image              | string |                           |
 
 ### Association
 - has_many :posts
 - has_many :comments
 - has_many :likes
+- has_many :like_posts
+- has_many :user_rooms
+- has_many :chats
 
 
 ## Postsテーブル
@@ -35,7 +39,8 @@
 - belongs_to :user
 - has_many :comments
 - has_many :likes
-- belongs_to: place
+- has_many :liking_users
+- belongs_to: prefecture
 
 
 ## Commentsテーブル
@@ -63,7 +68,7 @@
 - belongs_to: item
 
 
-## Placesテーブル
+## Prefectureテーブル
 
 | Column           | Type       | Options           |
 |------------------|------------|-------------------|
@@ -72,3 +77,33 @@
 
 ### Association
 - has_many: posts
+
+## Chatsテーブル
+
+| Column           | Type       | Options           |
+|------------------|------------|-------------------|
+| message          | string     | null: false       |
+
+### Associations 
+- belongs_to: user
+- belongs_to: room
+
+## Roomsテーブル
+
+| Column           | Type       | Options           |
+|------------------|------------|-------------------|
+
+### Association
+
+- has_many :chats
+- has_many :user_rooms
+
+## User_roomsテーブル
+
+| Column           | Type       | Options           |
+|------------------|------------|-------------------|
+
+### Association
+
+- belongs_to :user
+- belongs_to ;room

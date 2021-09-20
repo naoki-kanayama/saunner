@@ -7,6 +7,8 @@ class Post < ApplicationRecord
   validates :images, presence: true
   validate :validate_number_of_files
 
+  paginates_per 4
+
   belongs_to :user
   has_many :comments
   has_many :likes, dependent: :destroy

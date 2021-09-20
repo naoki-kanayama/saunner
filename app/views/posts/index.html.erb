@@ -12,17 +12,10 @@
         <div class = "recent-post">
           <h1>POST</h1>
         </div>
-        <% @posts.each do |post| %>
-          <div class="content-post" style="background-image: url(<%= post.images %>);">
-            <div class ="main-show-image">
-              <%= link_to post_path(post.id), method: :get, class:"main-show" do %>
-                <li class="post-image"><%= image_tag post.images[0].variant(resize: '300x300')%></li>
-              <% end %>
-              <p class="main-post-title"><%= link_to post.title, post_path(post.id), method: :get, class:"main-post-title" %></p>
-              <p class="post-user-name"><%=  link_to  ("post by " + post.user.nickname), user_path(post.user.id) %></p>
-            </div>
-          </div>
-        <% end %>
+        <div id = "posts_index"><%= render "shared/post_index" %></div>
+        <div class="more-post">
+          <div class="more"><%= link_to_next_page @posts, 'もっと見る', remote: true, id: 'view_more' %></div>
+        </div>
       </div>
     </div>
   </div>
