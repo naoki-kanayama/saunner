@@ -27,7 +27,7 @@
         <%= link_to post_path(likepost.id), method: :get, class:"rank-show" do %>
           <%= image_tag likepost.images[0].variant(resize: '150x150')%>
           <p><%= likepost.title%></p>
-          <div class="rank-iine">
+          <div class="rank-like">
             <p>♡<%= likepost.likes_count %></p>
           </div>
         <% end %>
