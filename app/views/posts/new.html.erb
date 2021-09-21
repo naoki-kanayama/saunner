@@ -5,16 +5,16 @@
     <%= form_with(model: @post, local: true) do |f| %>
     <h3>あなたのサ活を共有しよう</h3>
     <div class ="post-title">
-      <%= f.text_field :title,class:"post-title-form", placeholder: "title" %>
+      <%= f.text_field :title,class:"post-title-form", placeholder: "title(必須)" %>
     </div>
+    <p>最大3枚まで投稿できます</p>
     <div class ="post-image">
       <%= f.file_field :images, multiple: true, name: 'post[images][]', class:"post-image-form", id:"item-image" %>
     </div>
     <div class="preview" id="image-list">
-      
     </div>
     <div class = "post-text">
-      <%= f.text_area :text,class:"post-text-form", placeholder: "text", rows: "10" %>
+      <%= f.text_area :text,class:"post-text-form", placeholder: "text(必須)", rows: "10" %>
     </div>
     <div class = "post-prefecture">
       <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"post-select-box", id:"post-prefecture"}) %>

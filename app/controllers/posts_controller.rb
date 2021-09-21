@@ -52,7 +52,7 @@ class PostsController < ApplicationController
 
   def search
     if params[:keyword].present?
-      @posts = Post.where('(title LIKE ?) OR (text LIKE ?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%")
+      @posts = Post.where('(title LIKE ?) OR (text LIKE ?)', "%#{params[:keyword]}%", "%#{params[:keyword]}%").order("created_at DESC")
       @keyword = params[:keyword]
     else
       @posts = Post.all

@@ -19,8 +19,8 @@
             <tbody>
               <tr>
                 <th>
-                  <p style="text-align: left;", class="chat-message"><%= chat.message %></p>
-                  <p style="text-align: left;", class="chat-time" > <%= time_ago_in_words(chat.created_at) %></p>
+                  <p style="text-align: left;", class="chat-message-left"><%= chat.message %></p>
+                  <p style="text-align: left;", class="chat-time-left" > <%= time_ago_in_words(chat.created_at) %></p>
                 </th>
                 <th></th>
               </tr>
@@ -28,8 +28,8 @@
               <tr>
                 <th></th>
                 <th>
-                  <p style="text-align: right;", class= "chat-message"><%= chat.message %></p>
-                  <p style="text-align: right;", class="chat-time" > <%= time_ago_in_words(chat.created_at) %></p>
+                  <p style="text-align: right;", class= "chat-message-right"><%= chat.message %></p>
+                  <p style="text-align: right;", class="chat-time-right" > <%= time_ago_in_words(chat.created_at) %></p>
                 </th>
               </tr>
             </tbody>

@@ -6,9 +6,9 @@
     <div class ="post-title">
       <%= f.text_field :title,class:"post-title-form", placeholder: "title" %>
     </div>
+    <p>最大3枚まで投稿できます</p>
     <div class ="post-image">
       <%= f.file_field :images, multiple: true, name: 'post[images][]', class:"post-image-form", id:"item-image" %>
-      <p>クリックしてファイルをアップロード</p>
     </div>
     <div class="preview" id="image-list">
       

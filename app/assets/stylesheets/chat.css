@@ -48,11 +48,24 @@ th{
 tbody{
   height: 20px;
 }
-.chat-message{
+.chat-message-left{
   border-radius: 0%;
   background-color: lightgreen;
+  width: 220px;
+  margin-left: 5px;
 }
-.chat-time{
+.chat-message-right{
+  border-radius: 0%;
+  background-color: lightgreen;
+  margin-right: 5px;
+}
+.chat-time-left{
+  margin-left: 5px;
+  font-size: 10px;
+  color: rgb(77, 77, 77);
+}
+.chat-time-right{
+  margin-left: 5px;
   font-size: 10px;
   color: rgb(77, 77, 77);
 }
