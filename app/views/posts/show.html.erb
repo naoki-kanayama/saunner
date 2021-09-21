@@ -29,11 +29,11 @@
 <div class="comments">
   <h4>コメント一覧</h4>
   <% @comments.each do |comment| %>
-  <p>
+  <div class="comment-list">
     <strong class="comment-user-name"><%= link_to comment.user.nickname + "さん", user_path(comment.user.id) %></strong>
-    <%= comment.text %>
-    <%= time_ago_in_words(comment.created_at) %>
-  </p>
+    <p><%= comment.text %></p>
+    <p class="comment-time"><%= time_ago_in_words(comment.created_at) %></p>
+  </div>
   <% end %>
 </div>
 <div class ="post-comment">
