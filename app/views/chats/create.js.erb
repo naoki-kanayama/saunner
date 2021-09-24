@@ -1,2 +1,3 @@
-$('.message').append("<p style='text-align: left;'><%= @chat.message %></p>");
+$('.message').append("<p><%= @chat.message %></p>");
+$('.message').append("<p><%= time_ago_in_words(@chat.created_at) %></p>");
 $('input[type=text]').val("")

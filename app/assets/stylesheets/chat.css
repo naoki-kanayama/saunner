@@ -44,30 +44,40 @@ thead{
 }
 th{
   height: 20px;
+  text-align: left;
+  font-size: 20px;
 }
 tbody{
   height: 20px;
+}
+.message div{
+  border-radius: 0%;
+  background-color: lightgreen;
+  width: 220px;
 }
 .chat-message-left{
   border-radius: 0%;
   background-color: lightgreen;
   width: 220px;
-  margin-left: 5px;
+  text-align: left;
 }
 .chat-message-right{
   border-radius: 0%;
   background-color: lightgreen;
   margin-right: 5px;
+  text-align: right;
 }
 .chat-time-left{
   margin-left: 5px;
   font-size: 10px;
   color: rgb(77, 77, 77);
+  text-align: left;
 }
 .chat-time-right{
-  margin-left: 5px;
+  margin-right: 5px;
   font-size: 10px;
   color: rgb(77, 77, 77);
+  text-align: right;
 }
 
 .chat-form{
