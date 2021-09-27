@@ -166,6 +166,8 @@
 | Column           | Type       | Options           |
 |------------------|------------|-------------------|
 | message          | string     | null: false       |
+| user             | references | foreign_key: true |
+| room             | references | foreign_key: true |
 
 ### Associations 
 - belongs_to: user
@@ -185,6 +187,8 @@
 
 | Column           | Type       | Options           |
 |------------------|------------|-------------------|
+| user             | references | foreign_key: true |
+| room             | references | foreign_key: true |
 
 ### Association
 
