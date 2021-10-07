@@ -24,6 +24,7 @@
 # 本番環境
 ## 動作環境URL
   * https://saunner.herokuapp.com/
+  * ID:admin PASS:2222
 
 ## ログイン情報
 
